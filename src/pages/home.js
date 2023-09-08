@@ -6,7 +6,7 @@ const createHome = (() => {
     heroImg.src = 'assets/imgs/hero.jpg';
     /* home.appendChild(heroImg) */
 
-    home.appendChild(createParagraph('Welcome to Lickrish Eater'));
+    home.appendChild(createParagraph('Welcome to Lickrish Eater Home page'));
     return home;
 })();
 
@@ -16,10 +16,10 @@ function createParagraph(text){
     return para;
 }
 
-/* function loadHome() {
-    const main = document.getElementById('content');
+function loadHome() {
+    const main = document.getElementById('main');
     main.textContent = '';
-    main.appendChild(createHome());
-} */
+    main.appendChild(createHome);
+}
 
-export default createHome;
+export default loadHome;
