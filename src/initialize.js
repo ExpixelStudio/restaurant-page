@@ -1,22 +1,29 @@
-import loadHome from "./pages/home";
+import createHome from "./pages/home";
 import createMenu from "./pages/menu";
+import createContact from "./pages/contact";
 
 const createHeader = (() => {
     const header = document.createElement('header');
-    
     header.id = 'header';
 
-    const logoImg = new Image(120,120);
+    const div = document.createElement('div');
+    div.classList.add('logo-div');
+    
+
+    const logoImg = new Image(80,80);
     logoImg.src = 'assets/imgs/logo.png';
     logoImg.alt = 'logo_img';
 
     const resName = document.createElement('h2');
     resName.textContent='Lickrish Eater';
 
-    header.appendChild(logoImg);
-    header.appendChild(resName);
+    div.appendChild(logoImg);
+    div.appendChild(resName);
 
-    
+    /* header.appendChild(logoImg);
+    header.appendChild(resName); */
+
+    header.appendChild(div);
     header.appendChild(createNav());
     /* header.appendChild(createFooter()); */
     
@@ -32,26 +39,20 @@ function createNav() {
     const homeBtn = document.createElement('button');
     homeBtn.textContent = 'Home';
     homeBtn.classList.add('nav-btn');
-    homeBtn.addEventListener('click' , function(e){
-        
-        console.log("hi");
-        loadMainPage(createMenu());
-        
-        /* createMenu(); */
-        /* loadHome(); */
-    });
+    homeBtn.addEventListener('click' , createHome); 
 
     const menuBtn = document.createElement('button');
     menuBtn.textContent = 'Menu';
     menuBtn.classList.add('nav-btn');
-    menuBtn.addEventListener('click' , function(e){
-        
-    });
+    menuBtn.addEventListener('click' , createMenu);
+
+   
 
     const contactBtn = document.createElement('button');
     contactBtn.textContent='Contact';
     contactBtn.classList.add('nav-btn');
-
+    contactBtn.addEventListener('click' , createContact);
+   
     nav.appendChild(homeBtn);
     nav.appendChild(menuBtn);
     nav.appendChild(contactBtn);
@@ -86,13 +87,15 @@ function createNav() {
     footer.appendChild(gitHub);
 
     return footer;
-}
+};
 
-function loadMainPage(loadPage) {
+
+
+/* function loadMainPage(loadPage) {
     const main = document.getElementById('main');
     main.textContent = '';
     main.appendChild(loadPage);
-}
+} */
 
 /* createMain(); */
 export default createHeader;

@@ -1,0 +1,83 @@
+:root{
+
+}
+
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+
+body::before {
+    content: ""; /* Important */
+    z-index: -1; /* Important */
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height:100%;
+    width: 100%;
+
+    background-image: url(/dist/assets/imgs/hero.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    /* background-position-y:200px; */
+    filter: blur(1.5px);
+    /* -webkit-filter: blur(8px); */
+}
+
+body{
+    font-family: jost, "Times New Roman", Times, serif;
+    color:#fff;
+    
+    position:fixed;
+    left: 0;
+  right: 0;
+  z-index: 0;
+   /*  filter: blur(8px);
+    -webkit-filter: blur(8px); */
+    
+}
+
+.bg-img{
+   /*  background-image: url(/dist/assets/imgs/hero.jpg);
+    background-size: auto;
+    height:200px; */
+}
+
+#header{
+    display:flex;
+    align-items: center;
+    border:1px solid red;
+    justify-content: space-between;
+    padding:12px;
+    background-color: black;
+}
+
+#header .logo-div{
+    display:flex;
+    align-items: center;
+    width:max-content;
+    border:1px solid blue;
+    white-space: nowrap;
+    /* padding:25px; */
+}
+
+
+#header nav{
+    display: flex;
+    border:1px solid forestgreen;
+    padding:10px;
+    width: 100%;
+    justify-content: center;
+    gap:5%;
+}
+
+#header nav button{
+    background: none;
+   /*  outline:none; */
+    border:none;
+    color:#fff;
+}
+
